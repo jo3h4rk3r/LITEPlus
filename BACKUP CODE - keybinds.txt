@@ -1,0 +1,40 @@
+
+
+/*
+            //     -=- Chunk Limiter Keybinding -=-
+            while (binding3.wasPressed()) {
+                if (isChunksLoading) {
+                    isChunksLoading = false;
+                    assert client.player != null;
+                    client.player.sendMessage(Text.literal("§7[§6!§7] §e§lLITE§9§lPLUS§7:§a Chunk limiter enabled!"));
+                } else {
+                    isChunksLoading = true;
+                    assert client.player != null;
+                    client.player.sendMessage(Text.literal("§7[§6!§7] §e§lLITE§9§lPLUS§7:§c Chunk limiter disabled!"));
+                }
+            }
+            //     -=- Player Crasher Keybinding -=-
+            while (binding4.wasPressed()) {
+                if (playerCrasher) {
+                    playerCrasher = false;
+                    assert client.player != null;
+                    client.player.sendMessage(Text.literal("§7[§6!§7] §e§lLITE§9§lPLUS§7:§c Player crasher disabled!"));
+                } else {
+                    playerCrasher = true;
+                    assert client.player != null;
+                    client.player.sendMessage(Text.literal("§7[§6!§7] §e§lLITE§9§lPLUS§7:§a Player crasher enabled!"));
+                }
+            }
+            //     -=- Death Explorer Keybinding -=-
+            while (binding1.wasPressed()) {
+                assert client.player != null;
+                if (ExploreDeath) {
+                    client.player.sendMessage(Text.literal("§7[§6!§7] §e§lLITE§9§lPLUS§7:§c Death explorer disabled!"));
+                    ExploreDeath = false;
+                } else {
+                    client.player.sendMessage(Text.literal("§7[§6!§7] §e§lLITE§9§lPLUS§7:§a Death explorer enabled!"));
+                    ExploreDeath = true;
+                }
+            }
+
+ */
