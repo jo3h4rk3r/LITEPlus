@@ -1,19 +1,10 @@
 package liteplus.mixin;
 
-import liteplus.commands.*;
-import liteplus.utils.file.GithubReader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.network.message.ChatMessageSigner;
-import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.List;
 
 @Mixin(ClientPlayerEntity.class)
 public abstract class MixinClientPlayerEntity {
@@ -21,7 +12,7 @@ public abstract class MixinClientPlayerEntity {
     @Shadow @Final protected MinecraftClient client;
     //private String playerName;
 
-
+/*
     @Inject(at = @At("HEAD"), method = "sendChatMessagePacket", cancellable = true)
     public void sendChatMessage(ChatMessageSigner signer, String message, Text preview, CallbackInfo ci) {
 
@@ -48,4 +39,6 @@ public abstract class MixinClientPlayerEntity {
 
 
     }
+
+ */
 }
