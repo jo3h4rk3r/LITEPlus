@@ -20,7 +20,7 @@ public class PlayerCopyEntity extends OtherClientPlayerEntity {
     }
 
     public PlayerCopyEntity(PlayerEntity player, double x, double y, double z) {
-        super(MinecraftClient.getInstance().world, player.getGameProfile(), null);
+        super(MinecraftClient.getInstance().world != null ? MinecraftClient.getInstance().world : null, player.getGameProfile());
         copyFrom(player);
 
         // Cache the player textures, then switch to a random uuid

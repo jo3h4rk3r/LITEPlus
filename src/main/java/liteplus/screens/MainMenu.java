@@ -100,6 +100,7 @@ public class MainMenu extends AbstractWindowScreen {
                     assert client != null;
                     client.setScreen(new MultiplayerScreen(this));
                 }));
+        /*
         windows.get(0).buttons.add(
                 new WindowButton(w / 2 - 100, h / 4 + 86, w / 2 - 2, h / 4 + 106, "Protocol", () -> {
 
@@ -107,6 +108,8 @@ public class MainMenu extends AbstractWindowScreen {
                     client.setScreen(new ProtocolScreen(this));
 
                 }));
+
+         */
         windows.get(0).buttons.add(
                 new WindowButton(w / 2 + 2, h / 4 + 86, w / 2 + 100, h / 4 + 106, "Login", () -> {
                     windows.get(1).closed = false;
@@ -138,14 +141,20 @@ public class MainMenu extends AbstractWindowScreen {
             userField = new TextFieldWidget(textRenderer, x + w / 2 - 98, y + h / 4, 196, 18, Text.literal(null));
         if (passField == null)
             passField = new TextPassFieldWidget(textRenderer, x + w / 2 - 98, y + h / 4 + 30, 196, 18, Text.literal(null));
-        userField.x = x + w / 2 - 98;
-        userField.y = y + h / 4;
-        passField.x = x + w / 2 - 98;
-        passField.y = y + h / 4 + 30;
+        //userField.x = x + w / 2 - 98;
+        userField.setX(x + w / 2 - 98);
+        //userField.y = y + h / 4;
+        userField.setY(y + h / 4);
+        //passField.x = x + w / 2 - 98;
+        userField.setX(x + w / 2 - 98);
+        //passField.y = y + h / 4 + 30;
+        userField.setY(y + h / 4 + 30);
         if (checkBox == null)
             checkBox = new Checkbox(x + w / 2 - 99, y + h / 4 + 53, width, height, Text.literal("Save Login"), ButtonWidget::onPress);
-        checkBox.x = x + w / 2 - 99;
-        checkBox.y = y + h / 4 + 53;
+        //checkBox.x = x + w / 2 - 99;
+        userField.setX(x + w / 2 - 99);
+        //checkBox.y = y + h / 4 + 53;
+        userField.setY(y + h / 4 + 53);
         userField.setMaxLength(32767);
         passField.setMaxLength(32767);
 
@@ -325,12 +334,12 @@ public class MainMenu extends AbstractWindowScreen {
 
             drawStringWithShadow(matrix, textRenderer, "|  " + loginResult, x + w / 2 - 24, y + h / 4 + 65, 0xC0C0C0);
 
-            userField.x = x + w / 2 - 98;
-            userField.y = y + h / 4 + 10;
-            passField.x = x + w / 2 - 98;
-            passField.y = y + h / 4 + 40;
-            checkBox.x = x + w / 2 - 99;
-            checkBox.y = y + h / 4 + 63;
+            userField.setX(x + w / 2 - 98);
+            userField.setY(y + h / 4 + 10);
+            passField.setX(x + w / 2 - 98);
+            passField.setY(h / 4 + 40);
+            checkBox.setX(w / 2 - 99);
+            checkBox.setY(h / 4 + 63);
 
             userField.render(matrix, mX, mY, 1f);
             passField.render(matrix, mX, mY, 1f);
@@ -388,7 +397,7 @@ public class MainMenu extends AbstractWindowScreen {
             userField.mouseClicked(double_1, double_2, int_1);
             passField.mouseClicked(double_1, double_2, int_1);
 
-            if (double_1 > checkBox.x && double_1 < checkBox.x + 10 && double_2 > checkBox.y && double_2 < checkBox.y + 10) {
+            if (double_1 > checkBox.getX() && double_1 < checkBox.getX() + 10 && double_2 > checkBox.getY() && double_2 < checkBox.getY() + 10) {
                 checkBox.checked = !checkBox.checked;
             }
         } else if (!windows.get(2).closed && windows.get(2).selected) {

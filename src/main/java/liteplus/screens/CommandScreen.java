@@ -24,7 +24,7 @@ public class CommandScreen extends AbstractWindowScreen {
     protected void init() {
         super.init();
         assert this.client != null;
-        this.client.keyboard.setRepeatEvents(true);
+        //this.client.keyboard.setRepeatEvents(true);
         windows.clear();
         windows.add(new Window(width / 8,
                 height / 8,
@@ -60,14 +60,16 @@ public class CommandScreen extends AbstractWindowScreen {
 
         windows.get(0).buttons.add(
                 new WindowButton(w / 2 + 2, h / 10 + 67, w / 2 + 100, h / 10 + 87, "/home home", () -> {
-                    client.player.sendCommand("home home", Text.literal("Teleports home"));
+                    assert client.player != null;
+                    client.player.networkHandler.sendCommand("home home");
 
                 }));
 
 
         windows.get(0).buttons.add(
                 new WindowButton(w / 2 - 100, h / 10 + 67, w / 2 - 2, h / 10 + 87, "/Spawn", () -> {
-                    client.player.sendCommand("spawn", Text.literal("Teleports to spawn"));
+                    assert client.player != null;
+                    client.player.networkHandler.sendCommand("spawn");
                 }));
 
 
@@ -85,7 +87,7 @@ public class CommandScreen extends AbstractWindowScreen {
         windows.get(0).buttons.add(
                 new WindowButton(w / 2 + 2, h / 4 + 57, w / 2 + 100, h / 4 + 77, "/rtp", () -> {
 
-                    client.player.sendCommand("rtp", Text.literal("random teleport"));
+                    client.player.networkHandler.sendCommand("rtp");
 
 
                 }));
@@ -102,12 +104,12 @@ public class CommandScreen extends AbstractWindowScreen {
 
         windows.get(0).buttons.add(
                 new WindowButton(w / 2 - 100, h / 4 + 57, w / 2 - 2, h / 4 + 77, "/gamemode 1", () -> {
-                    client.player.sendCommand("gamemode creative", Text.literal("gamemode creative"));
+                    client.player.networkHandler.sendCommand("gamemode creative");
                 }));
 
         windows.get(0).buttons.add(
                 new WindowButton(w / 2 - 100, h / 4 + 85, w / 2 - 2, h / 4 + 106, I18n.translate("/tpaccept"), () -> {
-                    client.player.sendCommand("tpaccept", Text.literal("gamemode creative"));
+                    client.player.networkHandler.sendCommand("tpaccept");
 
                 }));
 
@@ -115,7 +117,7 @@ public class CommandScreen extends AbstractWindowScreen {
         windows.get(0).buttons.add(
                 new WindowButton(w / 2 + 2, h / 4 + 85, w / 2 + 100, h / 4 + 106, I18n.translate("/sethome home"), () -> {
 
-                    client.player.sendCommand("sethome home", Text.literal("sets a default home"));
+                    client.player.networkHandler.sendCommand("sethome home");
 
                 }));
 

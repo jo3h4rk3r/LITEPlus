@@ -23,7 +23,7 @@ public class DevOptionsScreen extends AbstractWindowScreen {
     protected void init() {
         super.init();
         assert this.client != null;
-        this.client.keyboard.setRepeatEvents(true);
+       // this.client.keyboard.setRepeatEvents(true);
         windows.clear();
         windows.add(new Window(width / 8,
                 height / 8,

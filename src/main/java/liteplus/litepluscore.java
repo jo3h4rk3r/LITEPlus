@@ -22,7 +22,7 @@ import org.lwjgl.glfw.GLFW;
 public class litepluscore implements ModInitializer {
     private static litepluscore INSTANCE = null;
     public static final String MOD_ID = "litepluscore";
-    public static final String VERSION = "v1.1";
+    public static final String VERSION = "v1.2";
     private static boolean isForcingLowFPS = false;
     public static boolean isChunksLoading = true;
     public static boolean SmartTrees = true;
